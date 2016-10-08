@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1691AD6FDB01EFFCD810F96B /* libPods-ZhihuDaily.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA2B1C7972FB76D453AD42F /* libPods-ZhihuDaily.a */; };
 		E599663D1DA9044000853F8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E599663C1DA9044000853F8F /* main.m */; };
 		E59966401DA9044000853F8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E599663F1DA9044000853F8F /* AppDelegate.m */; };
 		E59966431DA9044000853F8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E59966421DA9044000853F8F /* ViewController.m */; };
@@ -14,9 +15,16 @@
 		E59966491DA9044000853F8F /* ZhihuDaily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E59966471DA9044000853F8F /* ZhihuDaily.xcdatamodeld */; };
 		E599664B1DA9044000853F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E599664A1DA9044000853F8F /* Assets.xcassets */; };
 		E599664E1DA9044000853F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E599664C1DA9044000853F8F /* LaunchScreen.storyboard */; };
+		E599665A1DA9061300853F8F /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E59966591DA9061300853F8F /* MainTableViewController.m */; };
+		E59966611DA9255400853F8F /* Stories.m in Sources */ = {isa = PBXBuildFile; fileRef = E59966601DA9255400853F8F /* Stories.m */; };
+		E59966651DA9343000853F8F /* StroyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E59966631DA9343000853F8F /* StroyCell.m */; };
+		E59966661DA9343000853F8F /* StroyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E59966641DA9343000853F8F /* StroyCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BA2B1C7972FB76D453AD42F /* libPods-ZhihuDaily.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZhihuDaily.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		669B3BCD829D9D9E060466EB /* Pods-ZhihuDaily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDaily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDaily/Pods-ZhihuDaily.debug.xcconfig"; sourceTree = "<group>"; };
+		DE400BC250AFA6D9EEEBA8C7 /* Pods-ZhihuDaily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDaily.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDaily/Pods-ZhihuDaily.release.xcconfig"; sourceTree = "<group>"; };
 		E59966381DA9044000853F8F /* ZhihuDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhihuDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E599663C1DA9044000853F8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E599663E1DA9044000853F8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,6 +36,13 @@
 		E599664A1DA9044000853F8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E599664D1DA9044000853F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E599664F1DA9044000853F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E59966581DA9061300853F8F /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		E59966591DA9061300853F8F /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		E599665F1DA9255400853F8F /* Stories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stories.h; sourceTree = "<group>"; };
+		E59966601DA9255400853F8F /* Stories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stories.m; sourceTree = "<group>"; };
+		E59966621DA9343000853F8F /* StroyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StroyCell.h; sourceTree = "<group>"; };
+		E59966631DA9343000853F8F /* StroyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StroyCell.m; sourceTree = "<group>"; };
+		E59966641DA9343000853F8F /* StroyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StroyCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +50,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1691AD6FDB01EFFCD810F96B /* libPods-ZhihuDaily.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		368B48288D224F6B36EB6BD2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				669B3BCD829D9D9E060466EB /* Pods-ZhihuDaily.debug.xcconfig */,
+				DE400BC250AFA6D9EEEBA8C7 /* Pods-ZhihuDaily.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A1876C1BB20BD3CF289F1FBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BA2B1C7972FB76D453AD42F /* libPods-ZhihuDaily.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E599662F1DA9043F00853F8F = {
 			isa = PBXGroup;
 			children = (
 				E599663A1DA9044000853F8F /* ZhihuDaily */,
 				E59966391DA9044000853F8F /* Products */,
+				368B48288D224F6B36EB6BD2 /* Pods */,
+				A1876C1BB20BD3CF289F1FBB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +95,9 @@
 		E599663A1DA9044000853F8F /* ZhihuDaily */ = {
 			isa = PBXGroup;
 			children = (
+				E59966571DA905BD00853F8F /* Views */,
+				E59966561DA905B500853F8F /* Models */,
+				E59966551DA905AD00853F8F /* Controllers */,
 				E599663E1DA9044000853F8F /* AppDelegate.h */,
 				E599663F1DA9044000853F8F /* AppDelegate.m */,
 				E59966411DA9044000853F8F /* ViewController.h */,
@@ -82,6 +120,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E59966551DA905AD00853F8F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E59966581DA9061300853F8F /* MainTableViewController.h */,
+				E59966591DA9061300853F8F /* MainTableViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E59966561DA905B500853F8F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E599665F1DA9255400853F8F /* Stories.h */,
+				E59966601DA9255400853F8F /* Stories.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E59966571DA905BD00853F8F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E59966621DA9343000853F8F /* StroyCell.h */,
+				E59966631DA9343000853F8F /* StroyCell.m */,
+				E59966641DA9343000853F8F /* StroyCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E59966521DA9044000853F8F /* Build configuration list for PBXNativeTarget "ZhihuDaily" */;
 			buildPhases = (
+				21B7A83EE412C63290431436 /* [CP] Check Pods Manifest.lock */,
 				E59966341DA9044000853F8F /* Sources */,
 				E59966351DA9044000853F8F /* Frameworks */,
 				E59966361DA9044000853F8F /* Resources */,
+				2F57F7B94D76273CD17B9276 /* [CP] Embed Pods Frameworks */,
+				1F99E31A3BECB133E8EAE681 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -142,10 +211,59 @@
 				E599664E1DA9044000853F8F /* LaunchScreen.storyboard in Resources */,
 				E599664B1DA9044000853F8F /* Assets.xcassets in Resources */,
 				E59966461DA9044000853F8F /* Main.storyboard in Resources */,
+				E59966661DA9343000853F8F /* StroyCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F99E31A3BECB133E8EAE681 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZhihuDaily/Pods-ZhihuDaily-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21B7A83EE412C63290431436 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2F57F7B94D76273CD17B9276 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZhihuDaily/Pods-ZhihuDaily-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E59966341DA9044000853F8F /* Sources */ = {
@@ -155,7 +273,10 @@
 				E59966431DA9044000853F8F /* ViewController.m in Sources */,
 				E59966401DA9044000853F8F /* AppDelegate.m in Sources */,
 				E59966491DA9044000853F8F /* ZhihuDaily.xcdatamodeld in Sources */,
+				E599665A1DA9061300853F8F /* MainTableViewController.m in Sources */,
 				E599663D1DA9044000853F8F /* main.m in Sources */,
+				E59966611DA9255400853F8F /* Stories.m in Sources */,
+				E59966651DA9343000853F8F /* StroyCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +386,7 @@
 		};
 		E59966531DA9044000853F8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 669B3BCD829D9D9E060466EB /* Pods-ZhihuDaily.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZhihuDaily/Info.plist;
@@ -276,6 +398,7 @@
 		};
 		E59966541DA9044000853F8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE400BC250AFA6D9EEEBA8C7 /* Pods-ZhihuDaily.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZhihuDaily/Info.plist;
@@ -304,6 +427,7 @@
 				E59966541DA9044000853F8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
