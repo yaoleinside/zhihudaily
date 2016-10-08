@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>zhihudaily.xcscheme</key>
+		<key>ZhihuDaily.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>E599660A1DA8A38200853F8F</key>
+		<key>E59966371DA9044000853F8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

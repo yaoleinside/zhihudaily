@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E599660A1DA8A38200853F8F"
-               BuildableName = "zhihudaily.app"
-               BlueprintName = "zhihudaily"
-               ReferencedContainer = "container:zhihudaily.xcodeproj">
+               BlueprintIdentifier = "E59966371DA9044000853F8F"
+               BuildableName = "ZhihuDaily.app"
+               BlueprintName = "ZhihuDaily"
+               ReferencedContainer = "container:ZhihuDaily.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E599660A1DA8A38200853F8F"
-            BuildableName = "zhihudaily.app"
-            BlueprintName = "zhihudaily"
-            ReferencedContainer = "container:zhihudaily.xcodeproj">
+            BlueprintIdentifier = "E59966371DA9044000853F8F"
+            BuildableName = "ZhihuDaily.app"
+            BlueprintName = "ZhihuDaily"
+            ReferencedContainer = "container:ZhihuDaily.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E599660A1DA8A38200853F8F"
-            BuildableName = "zhihudaily.app"
-            BlueprintName = "zhihudaily"
-            ReferencedContainer = "container:zhihudaily.xcodeproj">
+            BlueprintIdentifier = "E59966371DA9044000853F8F"
+            BuildableName = "ZhihuDaily.app"
+            BlueprintName = "ZhihuDaily"
+            ReferencedContainer = "container:ZhihuDaily.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E599660A1DA8A38200853F8F"
-            BuildableName = "zhihudaily.app"
-            BlueprintName = "zhihudaily"
-            ReferencedContainer = "container:zhihudaily.xcodeproj">
+            BlueprintIdentifier = "E59966371DA9044000853F8F"
+            BuildableName = "ZhihuDaily.app"
+            BlueprintName = "ZhihuDaily"
+            ReferencedContainer = "container:ZhihuDaily.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
