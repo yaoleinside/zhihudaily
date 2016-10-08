@@ -14,6 +14,7 @@
 		E599661C1DA8A38200853F8F /* zhihudaily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E599661A1DA8A38200853F8F /* zhihudaily.xcdatamodeld */; };
 		E599661E1DA8A38200853F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E599661D1DA8A38200853F8F /* Assets.xcassets */; };
 		E59966211DA8A38200853F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E599661F1DA8A38200853F8F /* LaunchScreen.storyboard */; };
+		E599662B1DA8CF3C00853F8F /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E599662A1DA8CF3C00853F8F /* APIRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		E599661D1DA8A38200853F8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E59966201DA8A38200853F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E59966221DA8A38200853F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E59966291DA8CF3C00853F8F /* APIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRequest.h; sourceTree = "<group>"; };
+		E599662A1DA8CF3C00853F8F /* APIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,7 @@
 		E599660D1DA8A38200853F8F /* zhihudaily */ = {
 			isa = PBXGroup;
 			children = (
+				E59966281DA8CF0600853F8F /* Utility */,
 				E59966111DA8A38200853F8F /* AppDelegate.h */,
 				E59966121DA8A38200853F8F /* AppDelegate.m */,
 				E59966141DA8A38200853F8F /* ViewController.h */,
@@ -80,6 +84,15 @@
 				E599660F1DA8A38200853F8F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E59966281DA8CF0600853F8F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E59966291DA8CF3C00853F8F /* APIRequest.h */,
+				E599662A1DA8CF3C00853F8F /* APIRequest.m */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +168,7 @@
 				E59966161DA8A38200853F8F /* ViewController.m in Sources */,
 				E59966131DA8A38200853F8F /* AppDelegate.m in Sources */,
 				E599661C1DA8A38200853F8F /* zhihudaily.xcdatamodeld in Sources */,
+				E599662B1DA8CF3C00853F8F /* APIRequest.m in Sources */,
 				E59966101DA8A38200853F8F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +318,7 @@
 				E59966271DA8A38200853F8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
