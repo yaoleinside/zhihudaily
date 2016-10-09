@@ -15,5 +15,11 @@
     df.dateFormat = @"yyyyMMdd";
     return [df stringFromDate:date];
 }
++(NSString *)stringFromNowDate:(NSInteger)index {
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
+    df.dateFormat = @"yyyyMMdd";
+    NSDate *date = [[NSDate date] dateByAddingTimeInterval:-index * 60 * 60 *24];
+    return [self stringFromDate:date];
+}
 
 @end

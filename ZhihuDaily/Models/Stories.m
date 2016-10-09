@@ -18,6 +18,7 @@
         self.ga_prefix = dict[@"ga_prefix"];
         self.type = dict[@"type"];
         self.images = dict[@"images"][0];
+        self.image = dict[@"image"];
     }
     return self;
 }

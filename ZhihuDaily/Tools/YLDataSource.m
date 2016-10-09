@@ -9,33 +9,48 @@
 #import "YLDataSource.h"
 
 @interface YLDataSource()
-@property (nonatomic,strong)NSDictionary* dic;
+@property (nonatomic,strong)NSDictionary* tempDic;
+@property (nonatomic,copy)NSString *lastDate;
+
 
 @end
 
 @implementation YLDataSource
 
+-(instancetype)init{
+    self = [super init];
+    self.isUpdated = YES;
+    return self;
+}
+
 -(NSDictionary *)lastData{
+    
+    if (_lastData==nil){
+        _lastData=_tempDic;
+    }
+    
     if (_lastData==nil){
         NSString *path = [YLDataSource filePath];
         if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
             _lastData = [NSDictionary dictionaryWithContentsOfFile:path];
-            NSString *dateString = [YLDate stringFromDate:[NSDate date]];
-            _lastData = _lastData[dateString];
+            [_lastData enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+                _lastDate = key;
+            }];
+            _lastData = _lastData[_lastDate];
         }
     }
     return _lastData;
 }
 
--(NSArray *)dataArray{
-    if (_dataArray==nil){
-        _dataArray = [NSArray arrayWithObject:self.lastStories];
+-(NSMutableArray *)dataArray{
+    if (_dataArray==nil && self.lastStories != nil){
+        _dataArray = [NSMutableArray arrayWithObject:self.lastStories];
     }
     return _dataArray;
 }
 
 -(NSArray *)lastStories {
-    if (_lastStories == nil) {
+    if (_lastStories == nil && self.lastData != nil) {
         NSMutableArray *arr = [NSMutableArray array];
         for (NSDictionary* dic in self.lastData[@"stories"]) {
             Stories *st = [[Stories alloc]initWithDict:dic];
@@ -50,17 +65,33 @@
     return _lastStories;
 }
 
-+(void)initializeDS{
+-(NSArray *)topStories {
+    if (_topStories == nil) {
+        NSMutableArray *arr = [NSMutableArray array];
+        for (NSDictionary* dic in self.lastData[@"top_stories"]) {
+            Stories *st = [[Stories alloc]initWithDict:dic];
+            [arr addObject:st];
+            //            NSLog(@"!11");
+        }
+        _topStories = arr;
+    }
+    return _topStories;
+}
+
+
+
+-(void)initializeDS{
     AFHTTPSessionManager *AFN = [[AFHTTPSessionManager alloc]init];
     [AFN GET:lastNewsURL parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *path = [YLDataSource filePath];
-        NSDictionary* tempDic = (NSDictionary *)responseObject;
+        _tempDic = (NSDictionary *)responseObject;
         NSMutableDictionary* dic1 = [NSMutableDictionary dictionary];
-        [dic1 setValue:tempDic forKeyPath:tempDic[@"date"]];
-        [dic1 writeToFile:path atomically:YES];
-        
+        self.lastDate = _tempDic[@"date"];
+        [dic1 setValue:_tempDic forKeyPath:_tempDic[@"date"]];
+//        [dic1 writeToFile:path atomically:YES];
+        [self.delegate DateUpdated];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
@@ -68,7 +99,28 @@
 
 }
 
+-(void)loadNewDataWithDate:(NSString *)dateString {
+    AFHTTPSessionManager *AFN = [[AFHTTPSessionManager alloc]init];
+    NSString *url = [NewsURL stringByAppendingString:dateString];
+    [AFN GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        _tempDic =(NSDictionary *)responseObject;
+        NSMutableArray *arr = [NSMutableArray array];
+        for (NSDictionary* dic in _tempDic[@"stories"]) {
+            Stories *st = [[Stories alloc]initWithDict:dic];
+            [arr addObject:st];
+        }
+        [self.dataArray addObject:arr];
+        NSString *path = [YLDataSource filePath];
+        [_dataArray writeToFile:path atomically:YES];
+        [self.delegate DateUpdated];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
 
+}
 
 
 +(NSString *)dataPath {

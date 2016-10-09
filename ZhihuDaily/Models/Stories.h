@@ -15,6 +15,7 @@
 @property (nonatomic,copy)NSString *type;
 @property (nonatomic,copy)NSString *title;
 @property (nonatomic,copy)NSString *images;
+@property (nonatomic,copy)NSString *image;
 
 -(instancetype)initWithDict:(NSDictionary*)dict ;
 +(instancetype)StoriesWithDict:(NSDictionary*)dict;

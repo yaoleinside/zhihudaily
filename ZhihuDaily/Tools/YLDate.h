@@ -11,5 +11,6 @@
 @interface YLDate : NSObject
 
 +(NSString*)stringFromDate:(NSDate*)date;
++(NSString*)stringFromNowDate:(NSInteger)index;
 
 @end

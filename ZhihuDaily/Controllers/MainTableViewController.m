@@ -12,10 +12,7 @@
 
 
 @interface MainTableViewController ()
-@property (nonatomic,strong)NSData *jsonData;
-@property (nonatomic,strong)Stories *storyData;
-@property (nonatomic,strong)NSArray *dataArray;
-@property (nonatomic,strong)NSDictionary *dic;
+
 @property (nonatomic,strong)YLDataSource *YLDS;
 
 
@@ -25,12 +22,6 @@
 
 @implementation MainTableViewController
 
--(NSArray *)dataArray{
-    if (_dataArray==nil) {
-        _dataArray = self.dic[@"stories"];
-    }
-    return _dataArray;
-}
 
 
 
@@ -40,13 +31,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [YLDataSource initializeDS];
+    
     _YLDS = [[YLDataSource alloc]init];
+    _YLDS.delegate = self;
+    [_YLDS initializeDS];
 //    NSArray *ta =_YLDS.dataArray;
 //    Stories *st = _YLDS.dataArray[0][0];
 //    NSLog(@"%@",[NSString stringToMd5:st.title]);
+//    NSLog(@"%@",[_YLDS.topStories[0] valueForKeyPath:@"title"]);
+//    NSLog(@"%@",[YLDate stringFromNowDate:1]);
     [self demo];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,10 +49,32 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)loadNewdata {
+    if (_YLDS.isUpdated){
+        _YLDS.isUpdated = false;
+
+        NSString *st = [YLDate stringFromNowDate:[_YLDS.dataArray count]];
+        NSLog(@"%@",st);
+        [_YLDS loadNewDataWithDate:st];
+    }
+    
+}
+
 #pragma mark - Table view data source
+
+-(void)DateUpdated{
+//    NSLog(@"%@",_YLDS.dataArray);
+    _YLDS.isUpdated = YES;
+    [self.tableView reloadData];
+}
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 90;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [YLDate stringFromNowDate:section];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -82,6 +99,13 @@
     return cell;
 }
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGPoint py =[scrollView contentOffset];
+//    NSLog(@"%f %f %f",py.y,scrollView.bounds.size.height,scrollView.contentSize.height);
+    if (py.y > scrollView.contentSize.height - scrollView.bounds.size.height -30) {
+        [self loadNewdata];
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

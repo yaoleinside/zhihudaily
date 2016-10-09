@@ -13,7 +13,6 @@
 		E51BF7AA1DAA8F0300F69878 /* YLDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7A91DAA8F0300F69878 /* YLDate.m */; };
 		E599663D1DA9044000853F8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E599663C1DA9044000853F8F /* main.m */; };
 		E59966401DA9044000853F8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E599663F1DA9044000853F8F /* AppDelegate.m */; };
-		E59966431DA9044000853F8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E59966421DA9044000853F8F /* ViewController.m */; };
 		E59966461DA9044000853F8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E59966441DA9044000853F8F /* Main.storyboard */; };
 		E59966491DA9044000853F8F /* ZhihuDaily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E59966471DA9044000853F8F /* ZhihuDaily.xcdatamodeld */; };
 		E599664B1DA9044000853F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E599664A1DA9044000853F8F /* Assets.xcassets */; };
@@ -39,8 +38,6 @@
 		E599663C1DA9044000853F8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E599663E1DA9044000853F8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E599663F1DA9044000853F8F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E59966411DA9044000853F8F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E59966421DA9044000853F8F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E59966451DA9044000853F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E59966481DA9044000853F8F /* ZhihuDaily.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZhihuDaily.xcdatamodel; sourceTree = "<group>"; };
 		E599664A1DA9044000853F8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,8 +122,6 @@
 				E59966551DA905AD00853F8F /* Controllers */,
 				E599663E1DA9044000853F8F /* AppDelegate.h */,
 				E599663F1DA9044000853F8F /* AppDelegate.m */,
-				E59966411DA9044000853F8F /* ViewController.h */,
-				E59966421DA9044000853F8F /* ViewController.m */,
 				E59966441DA9044000853F8F /* Main.storyboard */,
 				E599664A1DA9044000853F8F /* Assets.xcassets */,
 				E599664C1DA9044000853F8F /* LaunchScreen.storyboard */,
@@ -296,7 +291,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E51BF7AA1DAA8F0300F69878 /* YLDate.m in Sources */,
-				E59966431DA9044000853F8F /* ViewController.m in Sources */,
 				E51BF7A41DAA6CFD00F69878 /* YLDataSource.m in Sources */,
 				E59966401DA9044000853F8F /* AppDelegate.m in Sources */,
 				E59966491DA9044000853F8F /* ZhihuDaily.xcdatamodeld in Sources */,

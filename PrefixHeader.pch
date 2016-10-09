@@ -23,3 +23,4 @@
 #import "YLDate.h"
 
 static NSString *const lastNewsURL = @"http://news-at.zhihu.com/api/4/news/latest";
+static NSString *const NewsURL = @"http://news.at.zhihu.com/api/4/news/before/";
