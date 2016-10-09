@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Stories.h"
 
 @interface StroyCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
+@property (nonatomic,strong)Stories *stories;
+
 
 @end

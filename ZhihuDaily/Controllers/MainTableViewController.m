@@ -8,7 +8,9 @@
 
 #import "MainTableViewController.h"
 #import "Stories.h"
+#import "StroyCell.h"
 #import <AFNetworking.h>
+#import <UIImageView+WebCache.h>
 static NSString *const lastNewsURL = @"http://news-at.zhihu.com/api/4/news/latest";
 
 @interface MainTableViewController ()
@@ -75,6 +77,10 @@ static NSString *const lastNewsURL = @"http://news-at.zhihu.com/api/4/news/lates
 
 #pragma mark - Table view data source
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 90;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
     return 1;
@@ -86,13 +92,20 @@ static NSString *const lastNewsURL = @"http://news-at.zhihu.com/api/4/news/lates
 }
 
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
-//    
-//    
-//    
-//    return cell;
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    StroyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier"];
+    if (cell==nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"StroyCell" owner:nil options:nil];
+        cell = nib[0];
+    }
+    cell.contentLabel.text =self.dataArray[indexPath.row][@"title"];
+    NSString *url = self.dataArray[indexPath.row][@"images"][0];
+//    NSLog(@"%@",url);
+    [cell.mainImageView sd_setImageWithURL:[NSURL URLWithString:url]];
+    
+    
+    return cell;
+}
 
 
 /*

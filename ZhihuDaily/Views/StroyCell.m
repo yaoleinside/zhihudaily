@@ -11,6 +11,14 @@
 
 @implementation StroyCell
 
+-(void)setStories:(Stories *)stories{
+    NSDictionary *dic = stories;
+    [self setValuesForKeysWithDictionary:dic];
+    
+    self.contentLabel.text = _stories.title;
+//    self.mainImageView.image = [UIImage]
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
