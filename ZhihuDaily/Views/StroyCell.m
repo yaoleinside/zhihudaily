@@ -12,11 +12,11 @@
 @implementation StroyCell
 
 -(void)setStories:(Stories *)stories{
-    NSDictionary *dic = stories;
-    [self setValuesForKeysWithDictionary:dic];
+    _stories = stories;
     
     self.contentLabel.text = _stories.title;
-//    self.mainImageView.image = [UIImage]
+    [self.mainImageView sd_setImageWithURL:[NSURL URLWithString:stories.images]];
+
 }
 
 - (void)awakeFromNib {

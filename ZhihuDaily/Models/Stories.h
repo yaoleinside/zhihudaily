@@ -10,11 +10,13 @@
 
 @interface Stories : NSObject
 
-@property (nonatomic,assign)NSInteger ga_prefix;
-@property (nonatomic,assign)NSInteger id;
-@property (nonatomic,assign)NSInteger type;
+@property (nonatomic,copy)NSString *ga_prefix;
+@property (nonatomic,copy)NSString *iid;
+@property (nonatomic,copy)NSString *type;
 @property (nonatomic,copy)NSString *title;
-@property (nonatomic,strong)NSArray *images;
+@property (nonatomic,copy)NSString *images;
 
+-(instancetype)initWithDict:(NSDictionary*)dict ;
++(instancetype)StoriesWithDict:(NSDictionary*)dict;
 
 @end

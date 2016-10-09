@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1691AD6FDB01EFFCD810F96B /* libPods-ZhihuDaily.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA2B1C7972FB76D453AD42F /* libPods-ZhihuDaily.a */; };
+		E51BF7A41DAA6CFD00F69878 /* YLDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7A31DAA6CFD00F69878 /* YLDataSource.m */; };
+		E51BF7A71DAA704200F69878 /* NSString+Md5.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7A61DAA704200F69878 /* NSString+Md5.m */; };
+		E51BF7AA1DAA8F0300F69878 /* YLDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7A91DAA8F0300F69878 /* YLDate.m */; };
 		E599663D1DA9044000853F8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E599663C1DA9044000853F8F /* main.m */; };
 		E59966401DA9044000853F8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E599663F1DA9044000853F8F /* AppDelegate.m */; };
 		E59966431DA9044000853F8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E59966421DA9044000853F8F /* ViewController.m */; };
@@ -25,6 +28,13 @@
 		0BA2B1C7972FB76D453AD42F /* libPods-ZhihuDaily.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZhihuDaily.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		669B3BCD829D9D9E060466EB /* Pods-ZhihuDaily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDaily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDaily/Pods-ZhihuDaily.debug.xcconfig"; sourceTree = "<group>"; };
 		DE400BC250AFA6D9EEEBA8C7 /* Pods-ZhihuDaily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDaily.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDaily/Pods-ZhihuDaily.release.xcconfig"; sourceTree = "<group>"; };
+		E51BF7A01DAA6B5000F69878 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		E51BF7A21DAA6CFD00F69878 /* YLDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLDataSource.h; sourceTree = "<group>"; };
+		E51BF7A31DAA6CFD00F69878 /* YLDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLDataSource.m; sourceTree = "<group>"; };
+		E51BF7A51DAA704200F69878 /* NSString+Md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Md5.h"; sourceTree = "<group>"; };
+		E51BF7A61DAA704200F69878 /* NSString+Md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Md5.m"; sourceTree = "<group>"; };
+		E51BF7A81DAA8F0300F69878 /* YLDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLDate.h; sourceTree = "<group>"; };
+		E51BF7A91DAA8F0300F69878 /* YLDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLDate.m; sourceTree = "<group>"; };
 		E59966381DA9044000853F8F /* ZhihuDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhihuDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E599663C1DA9044000853F8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E599663E1DA9044000853F8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,9 +84,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E51BF7A11DAA6CD000F69878 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E51BF7A21DAA6CFD00F69878 /* YLDataSource.h */,
+				E51BF7A31DAA6CFD00F69878 /* YLDataSource.m */,
+				E51BF7A51DAA704200F69878 /* NSString+Md5.h */,
+				E51BF7A61DAA704200F69878 /* NSString+Md5.m */,
+				E51BF7A81DAA8F0300F69878 /* YLDate.h */,
+				E51BF7A91DAA8F0300F69878 /* YLDate.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		E599662F1DA9043F00853F8F = {
 			isa = PBXGroup;
 			children = (
+				E51BF7A01DAA6B5000F69878 /* PrefixHeader.pch */,
 				E599663A1DA9044000853F8F /* ZhihuDaily */,
 				E59966391DA9044000853F8F /* Products */,
 				368B48288D224F6B36EB6BD2 /* Pods */,
@@ -95,6 +119,7 @@
 		E599663A1DA9044000853F8F /* ZhihuDaily */ = {
 			isa = PBXGroup;
 			children = (
+				E51BF7A11DAA6CD000F69878 /* Tools */,
 				E59966571DA905BD00853F8F /* Views */,
 				E59966561DA905B500853F8F /* Models */,
 				E59966551DA905AD00853F8F /* Controllers */,
@@ -270,10 +295,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E51BF7AA1DAA8F0300F69878 /* YLDate.m in Sources */,
 				E59966431DA9044000853F8F /* ViewController.m in Sources */,
+				E51BF7A41DAA6CFD00F69878 /* YLDataSource.m in Sources */,
 				E59966401DA9044000853F8F /* AppDelegate.m in Sources */,
 				E59966491DA9044000853F8F /* ZhihuDaily.xcdatamodeld in Sources */,
 				E599665A1DA9061300853F8F /* MainTableViewController.m in Sources */,
+				E51BF7A71DAA704200F69878 /* NSString+Md5.m in Sources */,
 				E599663D1DA9044000853F8F /* main.m in Sources */,
 				E59966611DA9255400853F8F /* Stories.m in Sources */,
 				E59966651DA9343000853F8F /* StroyCell.m in Sources */,
@@ -389,6 +417,8 @@
 			baseConfigurationReference = 669B3BCD829D9D9E060466EB /* Pods-ZhihuDaily.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = ZhihuDaily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pscy.ZhihuDaily;
@@ -401,6 +431,8 @@
 			baseConfigurationReference = DE400BC250AFA6D9EEEBA8C7 /* Pods-ZhihuDaily.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = ZhihuDaily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pscy.ZhihuDaily;

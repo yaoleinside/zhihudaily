@@ -9,15 +9,14 @@
 #import "MainTableViewController.h"
 #import "Stories.h"
 #import "StroyCell.h"
-#import <AFNetworking.h>
-#import <UIImageView+WebCache.h>
-static NSString *const lastNewsURL = @"http://news-at.zhihu.com/api/4/news/latest";
+
 
 @interface MainTableViewController ()
 @property (nonatomic,strong)NSData *jsonData;
 @property (nonatomic,strong)Stories *storyData;
 @property (nonatomic,strong)NSArray *dataArray;
 @property (nonatomic,strong)NSDictionary *dic;
+@property (nonatomic,strong)YLDataSource *YLDS;
 
 
 
@@ -33,39 +32,19 @@ static NSString *const lastNewsURL = @"http://news-at.zhihu.com/api/4/news/lates
     return _dataArray;
 }
 
--(NSString *)dataPath {
-    NSString *dataPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-    return [dataPath stringByAppendingString:@"/"];
-}
 
--(NSString*)filePath {
-    NSString *filePath = [self dataPath];
-    return [filePath stringByAppendingString:@"data.plist"];
-}
-
--(void)initializeDS {
-    AFHTTPSessionManager *AFN = [[AFHTTPSessionManager alloc]init];
-    [AFN GET:lastNewsURL parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSString *path = [self filePath];
-        _dic = (NSDictionary *)responseObject;
-        [_dic writeToFile:path atomically:YES];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-    }];
-}
 
 -(void) demo {
-    NSString *path = [self filePath];
-    _dic = [NSDictionary dictionaryWithContentsOfFile:path];
-    NSLog(@"%@",self.dataArray);
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initializeDS];
+    [YLDataSource initializeDS];
+    _YLDS = [[YLDataSource alloc]init];
+//    NSArray *ta =_YLDS.dataArray;
+//    Stories *st = _YLDS.dataArray[0][0];
+//    NSLog(@"%@",[NSString stringToMd5:st.title]);
     [self demo];
 
 }
@@ -83,12 +62,12 @@ static NSString *const lastNewsURL = @"http://news-at.zhihu.com/api/4/news/lates
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 1;
+    return _YLDS.dataArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return self.dataArray.count;
+    return [_YLDS.dataArray[section] count];
 }
 
 
@@ -98,12 +77,8 @@ static NSString *const lastNewsURL = @"http://news-at.zhihu.com/api/4/news/lates
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"StroyCell" owner:nil options:nil];
         cell = nib[0];
     }
-    cell.contentLabel.text =self.dataArray[indexPath.row][@"title"];
-    NSString *url = self.dataArray[indexPath.row][@"images"][0];
-//    NSLog(@"%@",url);
-    [cell.mainImageView sd_setImageWithURL:[NSURL URLWithString:url]];
-    
-    
+    Stories *stories = _YLDS.dataArray[indexPath.section][indexPath.row];
+    cell.stories = stories;
     return cell;
 }
 
