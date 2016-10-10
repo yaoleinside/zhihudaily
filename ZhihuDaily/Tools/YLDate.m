@@ -22,4 +22,10 @@
     return [self stringFromDate:date];
 }
 
++(NSDate*)dateFromString:(NSString*)aString {
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
+    df.dateFormat = @"yyyyMMdd";
+    return [df dateFromString:aString];
+}
+
 @end

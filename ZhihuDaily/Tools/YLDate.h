@@ -12,5 +12,6 @@
 
 +(NSString*)stringFromDate:(NSDate*)date;
 +(NSString*)stringFromNowDate:(NSInteger)index;
++(NSDate*)dateFromString:(NSString*)aString;
 
 @end

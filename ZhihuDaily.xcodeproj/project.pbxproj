@@ -11,6 +11,8 @@
 		E51BF7A41DAA6CFD00F69878 /* YLDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7A31DAA6CFD00F69878 /* YLDataSource.m */; };
 		E51BF7A71DAA704200F69878 /* NSString+Md5.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7A61DAA704200F69878 /* NSString+Md5.m */; };
 		E51BF7AA1DAA8F0300F69878 /* YLDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7A91DAA8F0300F69878 /* YLDate.m */; };
+		E51BF7AD1DAB6DD300F69878 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7AC1DAB6DD300F69878 /* Story.m */; };
+		E51BF7B01DAB6E9400F69878 /* StroyView.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7AF1DAB6E9400F69878 /* StroyView.m */; };
 		E599663D1DA9044000853F8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E599663C1DA9044000853F8F /* main.m */; };
 		E59966401DA9044000853F8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E599663F1DA9044000853F8F /* AppDelegate.m */; };
 		E59966461DA9044000853F8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E59966441DA9044000853F8F /* Main.storyboard */; };
@@ -34,6 +36,10 @@
 		E51BF7A61DAA704200F69878 /* NSString+Md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Md5.m"; sourceTree = "<group>"; };
 		E51BF7A81DAA8F0300F69878 /* YLDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLDate.h; sourceTree = "<group>"; };
 		E51BF7A91DAA8F0300F69878 /* YLDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLDate.m; sourceTree = "<group>"; };
+		E51BF7AB1DAB6DD300F69878 /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Story.h; sourceTree = "<group>"; };
+		E51BF7AC1DAB6DD300F69878 /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Story.m; sourceTree = "<group>"; };
+		E51BF7AE1DAB6E9400F69878 /* StroyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StroyView.h; sourceTree = "<group>"; };
+		E51BF7AF1DAB6E9400F69878 /* StroyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StroyView.m; sourceTree = "<group>"; };
 		E59966381DA9044000853F8F /* ZhihuDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhihuDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E599663C1DA9044000853F8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E599663E1DA9044000853F8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -154,6 +160,8 @@
 			children = (
 				E599665F1DA9255400853F8F /* Stories.h */,
 				E59966601DA9255400853F8F /* Stories.m */,
+				E51BF7AB1DAB6DD300F69878 /* Story.h */,
+				E51BF7AC1DAB6DD300F69878 /* Story.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,6 +172,8 @@
 				E59966621DA9343000853F8F /* StroyCell.h */,
 				E59966631DA9343000853F8F /* StroyCell.m */,
 				E59966641DA9343000853F8F /* StroyCell.xib */,
+				E51BF7AE1DAB6E9400F69878 /* StroyView.h */,
+				E51BF7AF1DAB6E9400F69878 /* StroyView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,6 +303,8 @@
 				E51BF7AA1DAA8F0300F69878 /* YLDate.m in Sources */,
 				E51BF7A41DAA6CFD00F69878 /* YLDataSource.m in Sources */,
 				E59966401DA9044000853F8F /* AppDelegate.m in Sources */,
+				E51BF7AD1DAB6DD300F69878 /* Story.m in Sources */,
+				E51BF7B01DAB6E9400F69878 /* StroyView.m in Sources */,
 				E59966491DA9044000853F8F /* ZhihuDaily.xcdatamodeld in Sources */,
 				E599665A1DA9061300853F8F /* MainTableViewController.m in Sources */,
 				E51BF7A71DAA704200F69878 /* NSString+Md5.m in Sources */,

@@ -11,9 +11,10 @@
 #import "StroyCell.h"
 
 
-@interface MainTableViewController ()
+@interface MainTableViewController ()<storyViewDelegate>
 
 @property (nonatomic,strong)YLDataSource *YLDS;
+@property (nonatomic,strong)StroyView *storyVC;
 
 
 
@@ -103,8 +104,39 @@
     CGPoint py =[scrollView contentOffset];
 //    NSLog(@"%f %f %f",py.y,scrollView.bounds.size.height,scrollView.contentSize.height);
     if (py.y > scrollView.contentSize.height - scrollView.bounds.size.height -30) {
-        [self loadNewdata];
+        if (_storyVC == nil) {[self loadNewdata];}
     }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_storyVC==nil) {
+    Stories *st = _YLDS.dataArray[indexPath.section][indexPath.row];
+    NSString *urlString = [NSString stringWithFormat:@"http://news-at.zhihu.com/api/4/news/%@",st.iid];
+//    NSLog(@"%@",urlString);
+    CGSize si = [[UIScreen mainScreen] bounds].size;
+    self.storyVC = [[StroyView alloc]initWithFrame:CGRectMake(0, self.tableView.contentOffset.y, si.width, si.height)];
+    _storyVC.storyViewDelegate = self;
+    _storyVC.offsetY = self.tableView.contentOffset.y;
+    
+    AFHTTPSessionManager *AFN = [[AFHTTPSessionManager alloc]init];
+    [AFN GET:urlString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        Story *st = [Story storyWithDic:responseObject];
+        _storyVC.stroy = st;
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+    
+    [self.view addSubview:self.storyVC];
+    }
+
+}
+
+-(void)releaseStroyView{
+    [self.storyVC removeFromSuperview];
+    self.storyVC = nil;
 }
 
 /*
