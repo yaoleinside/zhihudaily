@@ -79,12 +79,10 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return _YLDS.dataArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return [_YLDS.dataArray[section] count];
 }
 
@@ -114,7 +112,7 @@
     NSString *urlString = [NSString stringWithFormat:@"http://news-at.zhihu.com/api/4/news/%@",st.iid];
 //    NSLog(@"%@",urlString);
     CGSize si = [[UIScreen mainScreen] bounds].size;
-    self.storyVC = [[StroyView alloc]initWithFrame:CGRectMake(0, self.tableView.contentOffset.y, si.width, si.height)];
+    self.storyVC = [[StroyView alloc]initWithFrame:CGRectMake(0, 0, si.width, si.height)];
     _storyVC.storyViewDelegate = self;
     _storyVC.offsetY = self.tableView.contentOffset.y;
     
@@ -129,7 +127,7 @@
     }];
     
     
-    [self.view addSubview:self.storyVC];
+    [self.view.window addSubview:self.storyVC];
     }
 
 }

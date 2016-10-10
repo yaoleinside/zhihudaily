@@ -112,7 +112,6 @@
             [arr addObject:st];
         }
         [self.dataArray addObject:arr];
-        NSString *path = [YLDataSource filePath];
         [self.delegate DateUpdated];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

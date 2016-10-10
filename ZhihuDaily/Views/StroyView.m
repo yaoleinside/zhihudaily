@@ -34,17 +34,8 @@
         [self addGestureRecognizer];
     });
     
-    self.scrollView.bounces = NO;
+    self.scrollView.bounces = YES;
 
-}
-- (void)scrollViewDidScroll:(UIScrollView*)scrollView
-{
-    //限制scrollview的bounce size
-    if (scrollView.contentOffset.y <= 0) {
-        CGPoint offset = scrollView.contentOffset;
-        offset.y = 0;
-        scrollView.contentOffset = offset;
-    }
 }
 
 -(void)addGestureRecognizer{
@@ -55,7 +46,7 @@
 
 -(void)reportHorizontalGesture {
     [UIView animateWithDuration:1 animations:^{
-        self.frame = CGRectMake(self.bounds.size.width, _offsetY, self.bounds.size.width, self.bounds.size.height);
+        self.frame = CGRectMake(self.bounds.size.width, 0, self.bounds.size.width, self.bounds.size.height);
     } completion:^(BOOL finished) {
         [self.storyViewDelegate releaseStroyView];
     }];
