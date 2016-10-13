@@ -26,3 +26,10 @@
 
 static NSString *const lastNewsURL = @"http://news-at.zhihu.com/api/4/news/latest";
 static NSString *const NewsURL = @"http://news.at.zhihu.com/api/4/news/before/";
+
+#ifdef DEBUG
+#define yaoLogTestDebug NSLog(@"%d %s", __LINE__, __func__);
+#else
+#define yaoLog 
+#endif
+

@@ -42,7 +42,6 @@
 //    NSLog(@"%@",[_YLDS.topStories[0] valueForKeyPath:@"title"]);
 //    NSLog(@"%@",[YLDate stringFromNowDate:1]);
     [self demo];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,6 +65,10 @@
 -(void)DateUpdated{
 //    NSLog(@"%@",_YLDS.dataArray);
     _YLDS.isUpdated = YES;
+    NSArray *arr =_YLDS.dataArray ;
+//    [NSKeyedArchiver archiveRootObject:@(arr) toFile:[YLDataSource filePath]];
+    
+    
     [self.tableView reloadData];
 }
 

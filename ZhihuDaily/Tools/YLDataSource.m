@@ -90,7 +90,7 @@
         NSMutableDictionary* dic1 = [NSMutableDictionary dictionary];
         self.lastDate = _tempDic[@"date"];
         [dic1 setValue:_tempDic forKeyPath:_tempDic[@"date"]];
-        [dic1 writeToFile:path atomically:YES];
+//        [dic1 writeToFile:path atomically:YES];
         [self.delegate DateUpdated];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -112,6 +112,7 @@
             [arr addObject:st];
         }
         [self.dataArray addObject:arr];
+        NSString *filePath = [YLDataSource filePath];
         [self.delegate DateUpdated];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
