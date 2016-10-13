@@ -12,7 +12,6 @@
 
 -(instancetype)initWithDict:(NSDictionary *)dict{
     if(self=[super init]){
-//        [self setValuesForKeysWithDictionary:dict];
         self.title = dict[@"title"];
         self.iid = dict[@"id"];
         self.ga_prefix = dict[@"ga_prefix"];

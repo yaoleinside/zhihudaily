@@ -16,10 +16,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="217-tx-LOH">
-                        <rect key="frame" x="8" y="8" width="268" height="41"/>
+                        <rect key="frame" x="8" y="0.0" width="268" height="89.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="268" id="1LT-aO-utk"/>
-                            <constraint firstAttribute="height" constant="41" id="uGF-Kd-XHv"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -35,10 +34,17 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="217-tx-LOH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="4gB-Ha-e3d"/>
+                    <constraint firstItem="217-tx-LOH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fYJ-hr-cIH"/>
+                    <constraint firstAttribute="bottom" secondItem="217-tx-LOH" secondAttribute="bottom" id="hbv-nc-Plq"/>
                     <constraint firstItem="217-tx-LOH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="nys-dL-m7s"/>
                     <constraint firstItem="JAC-0l-RPq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="o9D-JG-qZe"/>
                     <constraint firstAttribute="trailingMargin" secondItem="JAC-0l-RPq" secondAttribute="trailing" id="xXs-IT-yy6"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="4gB-Ha-e3d"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentLabel" destination="217-tx-LOH" id="Crj-Xr-Mao"/>

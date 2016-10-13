@@ -19,17 +19,17 @@
 #import <UIImageView+WebCache.h>
 #import "Stories.h"
 #import "NSString+Md5.h"
-#import "YLDataSource.h"
 #import "YLDate.h"
 #import "Story.h"
 #import "StroyView.h"
 
-static NSString *const lastNewsURL = @"http://news-at.zhihu.com/api/4/news/latest";
-static NSString *const NewsURL = @"http://news.at.zhihu.com/api/4/news/before/";
 
 #ifdef DEBUG
 #define yaoLogTestDebug NSLog(@"%d %s", __LINE__, __func__);
 #else
-#define yaoLog 
+#define yaoLogTestDebug
 #endif
+
+
+#define themeColor [UIColor colorWithRed:51.0 / 255 green:153.0 / 255 blue:230.0 / 255 alpha:1]
 

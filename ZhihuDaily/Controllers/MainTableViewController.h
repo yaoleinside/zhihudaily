@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface MainTableViewController : UITableViewController<YLDateDelegate,NSCoding>
+@interface MainTableViewController : UITableViewController
 
 @end

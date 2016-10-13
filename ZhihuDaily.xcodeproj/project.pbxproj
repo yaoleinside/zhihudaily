@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1691AD6FDB01EFFCD810F96B /* libPods-ZhihuDaily.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA2B1C7972FB76D453AD42F /* libPods-ZhihuDaily.a */; };
-		E51BF7A41DAA6CFD00F69878 /* YLDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7A31DAA6CFD00F69878 /* YLDataSource.m */; };
 		E51BF7A71DAA704200F69878 /* NSString+Md5.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7A61DAA704200F69878 /* NSString+Md5.m */; };
 		E51BF7AA1DAA8F0300F69878 /* YLDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7A91DAA8F0300F69878 /* YLDate.m */; };
 		E51BF7AD1DAB6DD300F69878 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7AC1DAB6DD300F69878 /* Story.m */; };
@@ -23,6 +22,8 @@
 		E59966611DA9255400853F8F /* Stories.m in Sources */ = {isa = PBXBuildFile; fileRef = E59966601DA9255400853F8F /* Stories.m */; };
 		E59966651DA9343000853F8F /* StroyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E59966631DA9343000853F8F /* StroyCell.m */; };
 		E59966661DA9343000853F8F /* StroyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E59966641DA9343000853F8F /* StroyCell.xib */; };
+		E5FD60691DAF920C0072490D /* YaoleNetworkingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FD60681DAF920C0072490D /* YaoleNetworkingTool.m */; };
+		E5FD606C1DAFB6160072490D /* StoriesHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FD606B1DAFB6160072490D /* StoriesHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +31,6 @@
 		669B3BCD829D9D9E060466EB /* Pods-ZhihuDaily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDaily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDaily/Pods-ZhihuDaily.debug.xcconfig"; sourceTree = "<group>"; };
 		DE400BC250AFA6D9EEEBA8C7 /* Pods-ZhihuDaily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDaily.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDaily/Pods-ZhihuDaily.release.xcconfig"; sourceTree = "<group>"; };
 		E51BF7A01DAA6B5000F69878 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		E51BF7A21DAA6CFD00F69878 /* YLDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLDataSource.h; sourceTree = "<group>"; };
-		E51BF7A31DAA6CFD00F69878 /* YLDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLDataSource.m; sourceTree = "<group>"; };
 		E51BF7A51DAA704200F69878 /* NSString+Md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Md5.h"; sourceTree = "<group>"; };
 		E51BF7A61DAA704200F69878 /* NSString+Md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Md5.m"; sourceTree = "<group>"; };
 		E51BF7A81DAA8F0300F69878 /* YLDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLDate.h; sourceTree = "<group>"; };
@@ -56,6 +55,10 @@
 		E59966621DA9343000853F8F /* StroyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StroyCell.h; sourceTree = "<group>"; };
 		E59966631DA9343000853F8F /* StroyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StroyCell.m; sourceTree = "<group>"; };
 		E59966641DA9343000853F8F /* StroyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StroyCell.xib; sourceTree = "<group>"; };
+		E5FD60671DAF920C0072490D /* YaoleNetworkingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YaoleNetworkingTool.h; sourceTree = "<group>"; };
+		E5FD60681DAF920C0072490D /* YaoleNetworkingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YaoleNetworkingTool.m; sourceTree = "<group>"; };
+		E5FD606A1DAFB6160072490D /* StoriesHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoriesHeaderView.h; sourceTree = "<group>"; };
+		E5FD606B1DAFB6160072490D /* StoriesHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoriesHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,12 +93,12 @@
 		E51BF7A11DAA6CD000F69878 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				E51BF7A21DAA6CFD00F69878 /* YLDataSource.h */,
-				E51BF7A31DAA6CFD00F69878 /* YLDataSource.m */,
 				E51BF7A51DAA704200F69878 /* NSString+Md5.h */,
 				E51BF7A61DAA704200F69878 /* NSString+Md5.m */,
 				E51BF7A81DAA8F0300F69878 /* YLDate.h */,
 				E51BF7A91DAA8F0300F69878 /* YLDate.m */,
+				E5FD60671DAF920C0072490D /* YaoleNetworkingTool.h */,
+				E5FD60681DAF920C0072490D /* YaoleNetworkingTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -174,6 +177,8 @@
 				E59966641DA9343000853F8F /* StroyCell.xib */,
 				E51BF7AE1DAB6E9400F69878 /* StroyView.h */,
 				E51BF7AF1DAB6E9400F69878 /* StroyView.m */,
+				E5FD606A1DAFB6160072490D /* StoriesHeaderView.h */,
+				E5FD606B1DAFB6160072490D /* StoriesHeaderView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,12 +307,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E51BF7AA1DAA8F0300F69878 /* YLDate.m in Sources */,
-				E51BF7A41DAA6CFD00F69878 /* YLDataSource.m in Sources */,
 				E59966401DA9044000853F8F /* AppDelegate.m in Sources */,
 				E51BF7AD1DAB6DD300F69878 /* Story.m in Sources */,
+				E5FD60691DAF920C0072490D /* YaoleNetworkingTool.m in Sources */,
 				E51BF7B01DAB6E9400F69878 /* StroyView.m in Sources */,
 				E59966491DA9044000853F8F /* ZhihuDaily.xcdatamodeld in Sources */,
 				E599665A1DA9061300853F8F /* MainTableViewController.m in Sources */,
+				E5FD606C1DAFB6160072490D /* StoriesHeaderView.m in Sources */,
 				E51BF7A71DAA704200F69878 /* NSString+Md5.m in Sources */,
 				E599663D1DA9044000853F8F /* main.m in Sources */,
 				E59966611DA9255400853F8F /* Stories.m in Sources */,
