@@ -24,6 +24,8 @@
 		E59966661DA9343000853F8F /* StroyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E59966641DA9343000853F8F /* StroyCell.xib */; };
 		E5FD60691DAF920C0072490D /* YaoleNetworkingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FD60681DAF920C0072490D /* YaoleNetworkingTool.m */; };
 		E5FD606C1DAFB6160072490D /* StoriesHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FD606B1DAFB6160072490D /* StoriesHeaderView.m */; };
+		E5FD606F1DAFC7590072490D /* SQLiteTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FD606E1DAFC7590072490D /* SQLiteTool.m */; };
+		E5FD60711DAFC7A90072490D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E5FD60701DAFC7A90072490D /* libsqlite3.0.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,9 @@
 		E5FD60681DAF920C0072490D /* YaoleNetworkingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YaoleNetworkingTool.m; sourceTree = "<group>"; };
 		E5FD606A1DAFB6160072490D /* StoriesHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoriesHeaderView.h; sourceTree = "<group>"; };
 		E5FD606B1DAFB6160072490D /* StoriesHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoriesHeaderView.m; sourceTree = "<group>"; };
+		E5FD606D1DAFC7590072490D /* SQLiteTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteTool.h; sourceTree = "<group>"; };
+		E5FD606E1DAFC7590072490D /* SQLiteTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteTool.m; sourceTree = "<group>"; };
+		E5FD60701DAFC7A90072490D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5FD60711DAFC7A90072490D /* libsqlite3.0.tbd in Frameworks */,
 				1691AD6FDB01EFFCD810F96B /* libPods-ZhihuDaily.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +91,7 @@
 		A1876C1BB20BD3CF289F1FBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E5FD60701DAFC7A90072490D /* libsqlite3.0.tbd */,
 				0BA2B1C7972FB76D453AD42F /* libPods-ZhihuDaily.a */,
 			);
 			name = Frameworks;
@@ -99,6 +106,8 @@
 				E51BF7A91DAA8F0300F69878 /* YLDate.m */,
 				E5FD60671DAF920C0072490D /* YaoleNetworkingTool.h */,
 				E5FD60681DAF920C0072490D /* YaoleNetworkingTool.m */,
+				E5FD606D1DAFC7590072490D /* SQLiteTool.h */,
+				E5FD606E1DAFC7590072490D /* SQLiteTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -311,6 +320,7 @@
 				E51BF7AD1DAB6DD300F69878 /* Story.m in Sources */,
 				E5FD60691DAF920C0072490D /* YaoleNetworkingTool.m in Sources */,
 				E51BF7B01DAB6E9400F69878 /* StroyView.m in Sources */,
+				E5FD606F1DAFC7590072490D /* SQLiteTool.m in Sources */,
 				E59966491DA9044000853F8F /* ZhihuDaily.xcdatamodeld in Sources */,
 				E599665A1DA9061300853F8F /* MainTableViewController.m in Sources */,
 				E5FD606C1DAFB6160072490D /* StoriesHeaderView.m in Sources */,

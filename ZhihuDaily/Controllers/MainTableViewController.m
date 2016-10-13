@@ -45,6 +45,11 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
     } failure:^{
         yaoLogTestDebug
     }];
+    
+//    _tool.sqltool = [SQLiteTool sharedSQLiteTool];
+//    NSDictionary* dic = @{@"123":@"12331213"};
+//    [_tool.sqltool insertStories:dic withDate:@"20161011"];
+//    [_tool.sqltool StoriesWithDate:@"20161011"];
 
 }
 

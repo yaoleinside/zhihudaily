@@ -15,6 +15,8 @@ static NSString *const NewsURL = @"http://news.at.zhihu.com/api/4/news/before/";
 @interface YaoleNetworkingTool : AFHTTPSessionManager
 
 
+
+
 +(instancetype)shardNetworkingTool;
 
 -(void)loadDataWithDate:(NSString*)date success:(void(^)(NSArray* stories))success failure:(void(^)(void))failure;
