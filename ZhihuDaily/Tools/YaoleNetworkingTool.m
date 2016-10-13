@@ -26,14 +26,6 @@
  */
 -(void)loadDataWithDate:(NSString *)date success:(void (^)(id  _Nullable responseObject))success failure:(void (^)(void))failure {
     
-    if ([[NSFileManager defaultManager]fileExistsAtPath:[self filePath]]) {
-        NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:[self filePath]];
-        if (dic[date]) {
-            NSDictionary* dayDic = dic[date];
-            success([self storiesWithArr:dayDic[@"stories"]]);
-            return;
-        }
-    }
 
     NSString* urlString = [NewsURL stringByAppendingString:date];
     [self GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -74,33 +66,7 @@
 
 }
 
--(NSMutableArray*)storiesWithArr:(NSArray*)arr{
-    NSMutableArray* tempArr = [NSMutableArray array];
-    for (NSDictionary* dic in arr) {
-        Stories* st = [Stories StoriesWithDict:dic];
-        [tempArr addObject:st];
-    }
-    return tempArr;
-}
 
-#pragma mark - 获取沙盒路径
--(NSString*)filePath {
-    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-    return [docPath stringByAppendingString:@"/data.plist"];
-}
-
--(void)writeToFile:(id)responseObject forKeyPath:(NSString*)KeyPath {
-    if (![[NSFileManager defaultManager]fileExistsAtPath:[self filePath]]) {
-        NSMutableDictionary* dic = [NSMutableDictionary dictionary];
-        [dic setValue:responseObject forKeyPath:KeyPath];
-        [dic writeToFile:[self filePath] atomically:YES];
-    } else {
-        NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:[self filePath]];
-        [dic setValue:responseObject forKeyPath:KeyPath];
-        [dic writeToFile:[self filePath] atomically:YES];
-
-    }
-}
 
 
 @end
