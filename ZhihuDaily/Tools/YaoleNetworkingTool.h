@@ -19,9 +19,9 @@ static NSString *const NewsURL = @"http://news.at.zhihu.com/api/4/news/before/";
 
 +(instancetype)shardNetworkingTool;
 
--(void)loadDataWithDate:(NSString*)date success:(void(^)(NSArray* stories))success failure:(void(^)(void))failure;
+-(void)loadDataWithDate:(NSString*)date success:(void(^)(id   responseObject))success failure:(void(^)(void))failure;
 
--(void)loadDataTopStories:(void(^)(NSArray* stories,NSArray* topStories,NSString* lastDate))success failure:(void(^)(void))failure;
+-(void)loadDataTopStories:(void(^)(id   responseObject))success failure:(void(^)(void))failure;
 
 
 

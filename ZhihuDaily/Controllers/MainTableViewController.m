@@ -9,7 +9,7 @@
 #import "MainTableViewController.h"
 #import "Stories.h"
 #import "StroyCell.h"
-#import "YaoleNetworkingTool.h"
+#import "YaoleDataSource.h"
 #import "StoriesHeaderView.h"
 
 static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
@@ -17,7 +17,7 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
 @interface MainTableViewController ()
 
 @property (nonatomic,strong)StroyView *storyVC;
-@property (nonatomic,strong)YaoleNetworkingTool* tool;
+@property (nonatomic,strong)YaoleDataSource* tool;
 
 /*
  dataArray保存所有数据模型;
@@ -35,15 +35,15 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
 
 
 -(void)initialize {
-    _tool = [YaoleNetworkingTool shardNetworkingTool];
-    [_tool loadDataTopStories:^(NSArray *stories, NSArray *topStories, NSString *lastDate) {
+    _tool = [YaoleDataSource sharedDataSource];
+    [_tool getTopStories:^(NSArray *stories, NSArray *topStories, NSString *lastDate) {
         self.topStories = topStories;
         [self.dataArray addObject:stories];
         self.lastDate = lastDate;
         [self.tableView reloadData];
-        yaoLogTestDebug
+
     } failure:^{
-        yaoLogTestDebug
+        
     }];
     
 //    _tool.sqltool = [SQLiteTool sharedSQLiteTool];
@@ -134,13 +134,12 @@ static bool isNeedUpdate = true;
     if ((py.y > scrollView.contentSize.height - scrollView.bounds.size.height -30)&& isNeedUpdate && (date != nil)) {
         isNeedUpdate = false;
         yaoLogTestDebug
-        [_tool loadDataWithDate:date success:^(NSArray *stories) {
+        [_tool getStoriesWithDate:date success:^(NSArray *stories) {
             [self.dataArray addObject:stories];
             [self.tableView reloadData];
             isNeedUpdate = true;
         } failure:^{
             isNeedUpdate = true;
-            yaoLogTestDebug
         }];
     }
 }

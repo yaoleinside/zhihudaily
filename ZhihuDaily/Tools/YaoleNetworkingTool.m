@@ -24,7 +24,7 @@
 /*
     取出date这天的stories
  */
--(void)loadDataWithDate:(NSString *)date success:(void (^)(NSArray *))success failure:(void (^)(void))failure {
+-(void)loadDataWithDate:(NSString *)date success:(void (^)(id  _Nullable responseObject))success failure:(void (^)(void))failure {
     
     if ([[NSFileManager defaultManager]fileExistsAtPath:[self filePath]]) {
         NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:[self filePath]];
@@ -38,8 +38,7 @@
     NSString* urlString = [NewsURL stringByAppendingString:date];
     [self GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
          {
-            success([self storiesWithArr:responseObject[@"stories"]]);
-             [self writeToFile:responseObject forKeyPath:date];
+            success(responseObject);
         }
    
         
@@ -52,7 +51,7 @@
 /*
  取出last和TopStoreis
  */
--(void)loadDataTopStories:(void(^)(NSArray* stories,NSArray* topStories,NSString* lastDate))success failure:(void(^)(void))failure; {
+-(void)loadDataTopStories:(void(^)(id  _Nullable responseObject))success failure:(void(^)(void))failure; {
     [self GET:lastNewsURL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         /*
         NSMutableArray* stories = [NSMutableArray array];
@@ -68,17 +67,8 @@
             [topStories addObject:st];
         }
          */
-        NSString* lastDate = responseObject[@"date"];
-        success([self storiesWithArr:responseObject[@"stories"]],[self storiesWithArr:responseObject[@"top_stories"]],lastDate);
-        [self writeToFile:lastDate forKeyPath:@"lastDate"];
-        [self writeToFile:responseObject[@"stories"] forKeyPath:@"stories"];
-        [self writeToFile:responseObject[@"top_stories"] forKeyPath:@"top_stories"];
+        success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if ([[NSFileManager defaultManager]fileExistsAtPath:[self filePath]]) {
-            NSDictionary *responseObject = [NSDictionary dictionaryWithContentsOfFile:[self filePath]];
-            success([self storiesWithArr:responseObject[@"stories"]],[self storiesWithArr:responseObject[@"top_stories"]],responseObject[@"lastDate"]);
-            }
-        
         failure();
     }];
 
@@ -99,7 +89,7 @@
     return [docPath stringByAppendingString:@"/data.plist"];
 }
 
--(void)writeToFile:(NSDictionary*)responseObject forKeyPath:(NSString*)KeyPath {
+-(void)writeToFile:(id)responseObject forKeyPath:(NSString*)KeyPath {
     if (![[NSFileManager defaultManager]fileExistsAtPath:[self filePath]]) {
         NSMutableDictionary* dic = [NSMutableDictionary dictionary];
         [dic setValue:responseObject forKeyPath:KeyPath];
