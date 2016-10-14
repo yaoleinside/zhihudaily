@@ -5,18 +5,18 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Main Table View Controller-->
+        <!--今日热闻-->
         <scene sceneID="475-s8-g9R">
             <objects>
                 <tableViewController id="Sv4-oN-QnT" customClass="MainTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VfH-1E-y5b">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="100" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="id1" id="W3R-ET-sM5">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W3R-ET-sM5" id="ozH-CM-awT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -30,7 +30,7 @@
                             <outlet property="delegate" destination="Sv4-oN-QnT" id="uWN-mx-fsc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dgf-te-nIo"/>
+                    <navigationItem key="navigationItem" title="今日热闻" id="dgf-te-nIo"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vj-cE-k5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -42,13 +42,17 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WsQ-Qe-gYy" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R73-Cd-7lw">
+                    <navigationBar key="navigationBar" alpha="0.0" contentMode="scaleToFill" translucent="NO" id="R73-Cd-7lw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Sv4-oN-QnT" kind="relationship" relationship="rootViewController" id="11O-Rv-Ne4"/>
+                        <segue destination="Sv4-oN-QnT" kind="relationship" relationship="rootViewController" id="O2H-AE-3Nw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zF6-tH-Mq3" userLabel="First Responder" sceneMemberID="firstResponder"/>

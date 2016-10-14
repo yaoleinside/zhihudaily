@@ -61,6 +61,8 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
     [super viewDidLoad];
     [self initialize];
     [self setupTopExhibitonView];
+    [self setNavigationBarTranslucent];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,7 +82,8 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
     self.bannerView = [[BannerView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight)];
     self.bannerView.BannerViewDelegate = self;
     self.tableView.tableHeaderView = _bannerView;
-    self.tableView.contentOffset = CGPointMake(0, 100);
+    self.tableView.contentOffset = CGPointMake(0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-130, 0, 0, 0);
 
 }
 
@@ -150,9 +153,20 @@ static bool isNeedUpdate = true;
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGPoint py =[scrollView contentOffset];
     NSString *date = [YLDate stringFromDate:self.lastDate withIndex:[self.dataArray count]];
-    if ((py.y > scrollView.contentSize.height - scrollView.bounds.size.height -30)&& isNeedUpdate && (date != nil)) {
+    
+    if ((py.y > scrollView.contentSize.height - scrollView.bounds.size.height -30)&& isNeedUpdate && (date != nil))
+    {
         [self loadMoreData];
      }
+    if (py.y<0) {
+        py.y = 0;
+        [scrollView setContentOffset:py];
+    }
+    NSLog(@"%f",py.y);
+    CGFloat alpha = (py.y-66) / (235- 66);
+    [navV setAlpha:alpha];
+    
+
 }
 
 
@@ -170,6 +184,33 @@ static bool isNeedUpdate = true;
 
 }
 
+
+-(void)setNavigationBarTranslucent {
+    self.navigationController.navigationBar.translucent = true;
+
+    UIColor* color = [UIColor clearColor];
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    
+    /*
+     绘制一个1*1的透明图片设置为NaviBar的背景图片;
+     */
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef ref = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(ref, color.CGColor);
+    CGContextFillRect(ref, rect);
+    UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    [[[self.navigationController.navigationBar subviews] objectAtIndex:0]setAlpha:0];
+    
+    
+    UIImageView* imV = [[UIImageView alloc]initWithFrame:CGRectMake(0, -20, self.navigationController.navigationBar.frame.size.width, 64)];
+    imV.backgroundColor = themeColor;
+    [self.navigationController.navigationBar insertSubview:imV atIndex:1];
+    navV = imV;
+}
+static UIImageView* navV;
 
 #pragma mark - 懒加载
 - (NSMutableArray *)dataArray {

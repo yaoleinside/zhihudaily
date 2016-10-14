@@ -83,12 +83,14 @@
 //    [_pageControl sizeToFit];
 }
 
+#pragma mark - BannerView Delegate
 -(void)loadStory {
     if ([self.BannerViewDelegate respondsToSelector:@selector(sendCurrentPageIndex:)]) {
         [self.BannerViewDelegate sendCurrentPageIndex:self.pageControl.currentPage];
     }
 }
 
+#pragma mark - scrollView delegate
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     _pageControl.currentPage = (NSInteger)(scrollView.contentOffset.x + 0.000001) / self.frame.size.width;
 }
