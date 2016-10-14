@@ -27,6 +27,7 @@
 		E5FD606F1DAFC7590072490D /* SQLiteTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FD606E1DAFC7590072490D /* SQLiteTool.m */; };
 		E5FD60711DAFC7A90072490D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E5FD60701DAFC7A90072490D /* libsqlite3.0.tbd */; };
 		E5FD60771DAFFA6F0072490D /* YaoleDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FD60761DAFFA6F0072490D /* YaoleDataSource.m */; };
+		E5FD607D1DB0B9180072490D /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FD607C1DB0B9180072490D /* BannerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,8 @@
 		E5FD60701DAFC7A90072490D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		E5FD60751DAFFA6F0072490D /* YaoleDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YaoleDataSource.h; sourceTree = "<group>"; };
 		E5FD60761DAFFA6F0072490D /* YaoleDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YaoleDataSource.m; sourceTree = "<group>"; };
+		E5FD607B1DB0B9180072490D /* BannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerView.h; sourceTree = "<group>"; };
+		E5FD607C1DB0B9180072490D /* BannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,8 @@
 				E51BF7AF1DAB6E9400F69878 /* StroyView.m */,
 				E5FD606A1DAFB6160072490D /* StoriesHeaderView.h */,
 				E5FD606B1DAFB6160072490D /* StoriesHeaderView.m */,
+				E5FD607B1DB0B9180072490D /* BannerView.h */,
+				E5FD607C1DB0B9180072490D /* BannerView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 				E5FD606F1DAFC7590072490D /* SQLiteTool.m in Sources */,
 				E59966491DA9044000853F8F /* ZhihuDaily.xcdatamodeld in Sources */,
 				E5FD60771DAFFA6F0072490D /* YaoleDataSource.m in Sources */,
+				E5FD607D1DB0B9180072490D /* BannerView.m in Sources */,
 				E599665A1DA9061300853F8F /* MainTableViewController.m in Sources */,
 				E5FD606C1DAFB6160072490D /* StoriesHeaderView.m in Sources */,
 				E51BF7A71DAA704200F69878 /* NSString+Md5.m in Sources */,

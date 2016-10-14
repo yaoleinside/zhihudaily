@@ -11,10 +11,11 @@
 #import "StroyCell.h"
 #import "YaoleDataSource.h"
 #import "StoriesHeaderView.h"
+#import "BannerView.h"
 
 static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
 
-@interface MainTableViewController ()
+@interface MainTableViewController ()<BannerViewDelegate>
 
 @property (nonatomic,strong)StroyView *storyVC;
 @property (nonatomic,strong)YaoleDataSource* tool;
@@ -25,6 +26,9 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
 @property (nonatomic,strong)NSMutableArray* dataArray;
 @property (nonatomic,strong)NSArray* topStories;
 @property (nonatomic,copy)NSString *lastDate;
+
+@property (nonatomic,strong)BannerView* bannerView;
+
 
 
 @end
@@ -41,21 +45,22 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
         [self.dataArray addObject:stories];
         self.lastDate = lastDate;
         [self.tableView reloadData];
-
+        self.bannerView.stories = self.topStories;
     } failure:^{
         
     }];
-    
+  /*
 //    _tool.sqltool = [SQLiteTool sharedSQLiteTool];
 //    NSDictionary* dic = @{@"123":@"12331213"};
 //    [_tool.sqltool insertStories:dic withDate:@"20161011"];
 //    [_tool.sqltool StoriesWithDate:@"20161011"];
-
+*/
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialize];
+    [self setupTopExhibitonView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,15 +68,24 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
     // Dispose of any resources that can be recreated.
 }
 
--(void)loadNewdata {
 
+#pragma mark - 添加顶部展示板
+
+
+
+-(void)setupTopExhibitonView {
+    CGFloat kWidth = self.view.frame.size.width;
+    CGFloat kHeight = 300;
     
+    self.bannerView = [[BannerView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight)];
+    self.bannerView.BannerViewDelegate = self;
+    self.tableView.tableHeaderView = _bannerView;
+    self.tableView.contentOffset = CGPointMake(0, 100);
+
 }
 
+
 #pragma mark - Table view data source
-
-
-
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 90;
@@ -126,22 +140,34 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
 }
 
 
+#pragma mark - 实现BannerViewDelegate
+-(void)sendCurrentPageIndex:(NSInteger)index {
+    NSLog(@"%tu",index);
+}
+
 #pragma mark - 处理上拉刷新
 static bool isNeedUpdate = true;
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGPoint py =[scrollView contentOffset];
     NSString *date = [YLDate stringFromDate:self.lastDate withIndex:[self.dataArray count]];
     if ((py.y > scrollView.contentSize.height - scrollView.bounds.size.height -30)&& isNeedUpdate && (date != nil)) {
-        isNeedUpdate = false;
-        yaoLogTestDebug
-        [_tool getStoriesWithDate:date success:^(NSArray *stories) {
-            [self.dataArray addObject:stories];
-            [self.tableView reloadData];
-            isNeedUpdate = true;
-        } failure:^{
-            isNeedUpdate = true;
-        }];
-    }
+        [self loadMoreData];
+     }
+}
+
+
+-(void)loadMoreData {
+    NSString *date = [YLDate stringFromDate:self.lastDate withIndex:[self.dataArray count]];
+    isNeedUpdate = false;
+    yaoLogTestDebug
+    [_tool getStoriesWithDate:date success:^(NSArray *stories) {
+        [self.dataArray addObject:stories];
+        [self.tableView reloadData];
+        isNeedUpdate = true;
+    } failure:^{
+        isNeedUpdate = true;
+    }];
+
 }
 
 
