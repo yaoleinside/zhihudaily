@@ -82,8 +82,7 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
     self.bannerView = [[BannerView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight)];
     self.bannerView.BannerViewDelegate = self;
     self.tableView.tableHeaderView = _bannerView;
-    self.tableView.contentOffset = CGPointMake(0, 0);
-    self.tableView.contentInset = UIEdgeInsetsMake(-130, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
 
 }
 
@@ -151,10 +150,10 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
 #pragma mark - 处理上拉刷新
 static bool isNeedUpdate = true;
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.lastDate == nil) return;
     CGPoint py =[scrollView contentOffset];
-    NSString *date = [YLDate stringFromDate:self.lastDate withIndex:[self.dataArray count]];
     
-    if ((py.y > scrollView.contentSize.height - scrollView.bounds.size.height -30)&& isNeedUpdate && (date != nil))
+    if ((py.y > scrollView.contentSize.height - scrollView.bounds.size.height -30)&& isNeedUpdate)
     {
         [self loadMoreData];
      }
@@ -162,10 +161,19 @@ static bool isNeedUpdate = true;
         py.y = 0;
         [scrollView setContentOffset:py];
     }
-    NSLog(@"%f",py.y);
     CGFloat alpha = (py.y-66) / (235- 66);
     [navV setAlpha:alpha];
-    
+    NSInteger lastDayCount = [self.dataArray[0] count];
+    CGFloat dist = py.y-lastDayCount * 90 -280;
+    if (dist >0) {
+        navV.frame = CGRectMake(0, -20, self.navigationController.navigationBar.frame.size.width, 20);
+        self.navigationItem.title = @"";
+        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
+    } else {
+        navV.frame = CGRectMake(0, -20, self.navigationController.navigationBar.frame.size.width, 64);
+        self.navigationItem.title = @"今日热闻";
+        self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
+    }
 
 }
 
@@ -207,8 +215,11 @@ static bool isNeedUpdate = true;
     
     UIImageView* imV = [[UIImageView alloc]initWithFrame:CGRectMake(0, -20, self.navigationController.navigationBar.frame.size.width, 64)];
     imV.backgroundColor = themeColor;
+    imV.alpha = 0;
     [self.navigationController.navigationBar insertSubview:imV atIndex:1];
     navV = imV;
+    self.tableView.contentOffset = CGPointMake(0, 128);
+
 }
 static UIImageView* navV;
 
