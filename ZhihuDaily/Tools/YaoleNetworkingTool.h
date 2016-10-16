@@ -11,6 +11,7 @@
 
 static NSString *const lastNewsURL = @"http://news-at.zhihu.com/api/4/news/latest";
 static NSString *const NewsURL = @"http://news.at.zhihu.com/api/4/news/before/";
+static NSString *const StoryURL = @"http://news-at.zhihu.com/api/4/news/";
 
 @interface YaoleNetworkingTool : AFHTTPSessionManager
 
@@ -23,6 +24,6 @@ static NSString *const NewsURL = @"http://news.at.zhihu.com/api/4/news/before/";
 
 -(void)loadDataTopStories:(void(^)(id   responseObject))success failure:(void(^)(void))failure;
 
-
+-(void)loadStoryData:(NSString*)iid success:(void(^)(id responseObject))success failure:(void(^)(void))failure;
 
 @end

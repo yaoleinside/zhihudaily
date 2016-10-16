@@ -16,10 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="217-tx-LOH">
-                        <rect key="frame" x="8" y="0.0" width="268" height="89.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="268" id="1LT-aO-utk"/>
-                        </constraints>
+                        <rect key="frame" x="8" y="0.0" width="298" height="89.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -34,6 +31,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="217-tx-LOH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="4gB-Ha-e3d"/>
+                    <constraint firstItem="JAC-0l-RPq" firstAttribute="leading" secondItem="217-tx-LOH" secondAttribute="trailing" constant="10" id="NjT-Lw-UUb"/>
                     <constraint firstItem="217-tx-LOH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fYJ-hr-cIH"/>
                     <constraint firstAttribute="bottom" secondItem="217-tx-LOH" secondAttribute="bottom" id="hbv-nc-Plq"/>
                     <constraint firstItem="217-tx-LOH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="nys-dL-m7s"/>
@@ -51,13 +49,5 @@
                 <outlet property="mainImageView" destination="JAC-0l-RPq" id="bAK-JF-dIG"/>
             </connections>
         </tableViewCell>
-        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kFu-RF-cNj">
-            <rect key="frame" x="0.0" y="0.0" width="184" height="107"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-            <nil key="highlightedColor"/>
-            <point key="canvasLocation" x="476" y="116.5"/>
-        </label>
     </objects>
 </document>

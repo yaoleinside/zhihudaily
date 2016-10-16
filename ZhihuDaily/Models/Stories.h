@@ -11,7 +11,7 @@
 @interface Stories : NSObject
 
 @property (nonatomic,copy)NSString *ga_prefix;
-@property (nonatomic,copy)NSString *iid;
+@property (nonatomic,assign)NSInteger iid;
 @property (nonatomic,copy)NSString *type;
 @property (nonatomic,copy)NSString *title;
 @property (nonatomic,copy)NSString *images;

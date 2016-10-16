@@ -29,6 +29,7 @@
     @"body></html>";
     NSString* htmlString =[NSString stringWithFormat:htmlFormatString, cssContent, customCss,
      self.stroy.body];
+
     dispatch_async(dispatch_get_main_queue(), ^{
         [self loadHTMLString:htmlString baseURL:nil];
         [self addGestureRecognizer];

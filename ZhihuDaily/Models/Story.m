@@ -19,7 +19,7 @@
         self.body = dic[@"body"];
         self.title = dic[@"title"];
         self.type = [dic[@"type"] integerValue];
-        self.id = [dic[@"id"] integerValue];
+        self.iid = [dic[@"id"] integerValue];
     }
     return self;
 }

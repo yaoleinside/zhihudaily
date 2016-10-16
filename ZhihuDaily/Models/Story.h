@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Story : NSObject
-@property (assign, nonatomic) NSUInteger id;
+@property (assign, nonatomic) NSUInteger iid;
 @property (assign, nonatomic) NSInteger type;
 @property (copy, nonatomic) NSString* css;
 @property (copy, nonatomic) NSString* body;

@@ -18,7 +18,7 @@
 @interface BannerView : UIView
 
 @property (nonatomic,strong)NSArray<Stories*>* stories;
-@property (nonatomic,strong)id<BannerViewDelegate> BannerViewDelegate;
+@property (nonatomic,weak)id<BannerViewDelegate> BannerViewDelegate;
 
 
 @end

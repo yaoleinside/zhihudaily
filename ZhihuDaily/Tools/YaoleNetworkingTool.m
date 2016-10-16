@@ -45,20 +45,7 @@
  */
 -(void)loadDataTopStories:(void(^)(id  _Nullable responseObject))success failure:(void(^)(void))failure; {
     [self GET:lastNewsURL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        /*
-        NSMutableArray* stories = [NSMutableArray array];
-        NSMutableArray* topStories = [NSMutableArray array];
-        NSArray* arr = responseObject[@"stories"];
-        for (NSDictionary* dic in arr) {
-            Stories* st = [Stories StoriesWithDict:dic];
-            [stories addObject:st];
-        }
-        arr = responseObject[@"top_stories"];
-        for (NSDictionary* dic in arr) {
-            Stories* st = [Stories StoriesWithDict:dic];
-            [topStories addObject:st];
-        }
-         */
+
         success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failure();
@@ -67,6 +54,16 @@
 }
 
 
+-(void)loadStoryData:(NSString *)iid success:(void (^)(id))success failure:(void (^)(void))failure {
+//    iid = [NSString stringWithFormat:@"%d",iid];
+    
+    NSString* urlString = [StoryURL stringByAppendingString:iid];
+    [self GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+    }];
+}
 
 
 @end

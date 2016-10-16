@@ -80,6 +80,15 @@
     
 }
 
+-(void)getStory:(NSString *)iid success:(void (^)(Story *))success failure:(void (^)(void))failure {
+    [_tool loadStoryData:iid success:^(id responseObject) {
+        Story* story = [[Story alloc]initWithDic:responseObject];
+        success(story);
+    } failure:^{
+        
+    }];
+}
+
 #pragma mark - 转模型工具
 /*
  数组stories字典转数组stories模型;

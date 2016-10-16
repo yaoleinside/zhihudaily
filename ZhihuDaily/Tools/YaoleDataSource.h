@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Story.h"
 
 @interface YaoleDataSource : NSObject
 
@@ -15,5 +16,7 @@
 -(void)getStoriesWithDate:(NSString*)date success:(void(^)(NSArray* stories))success failure:(void(^)(void))failure;
 
 -(void)getTopStories:(void(^)(NSArray* stories,NSArray* topStories,NSString* lastDate))success failure:(void(^)(void))failure;
+
+-(void)getStory:(NSString *)iid success:(void(^)(Story* Story))success failure:(void(^)(void))failure;
 
 @end

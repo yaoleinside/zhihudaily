@@ -12,6 +12,7 @@
 #import "YaoleDataSource.h"
 #import "StoriesHeaderView.h"
 #import "BannerView.h"
+#import "StroyView.h"
 
 static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
 
@@ -24,7 +25,7 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
  dataArray保存所有数据模型;
  */
 @property (nonatomic,strong)NSMutableArray* dataArray;
-@property (nonatomic,strong)NSArray* topStories;
+@property (nonatomic,strong)NSArray<Stories*>* topStories;
 @property (nonatomic,copy)NSString *lastDate;
 
 @property (nonatomic,strong)BannerView* bannerView;
@@ -49,12 +50,7 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
     } failure:^{
         
     }];
-  /*
-//    _tool.sqltool = [SQLiteTool sharedSQLiteTool];
-//    NSDictionary* dic = @{@"123":@"12331213"};
-//    [_tool.sqltool insertStories:dic withDate:@"20161011"];
-//    [_tool.sqltool StoriesWithDate:@"20161011"];
-*/
+
 }
 
 - (void)viewDidLoad {
@@ -142,9 +138,33 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
 }
 
 
+-(void)loadStoryView:(Story *)story {
+    
+    UIScrollView *sv = [[UIScrollView alloc]initWithFrame:[UIScreen mainScreen] .bounds];
+    sv.delegate = self;
+    StroyView *webView = [[StroyView alloc]initWithFrame:[UIScreen mainScreen] .bounds];
+    webView.stroy = story;
+    
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 375, 300)];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:story.image]];
+    
+    [sv addSubview:webView];
+    [sv addSubview:imageView];
+
+    [self.view.window insertSubview:sv aboveSubview:self.view.window];
+}
+
+
+
 #pragma mark - 实现BannerViewDelegate
 -(void)sendCurrentPageIndex:(NSInteger)index {
     NSLog(@"%tu",index);
+    NSString* iid =[NSString stringWithFormat:@"%d", self.topStories[index].iid];
+    [_tool getStory:iid success:^(Story *Story) {
+        [self loadStoryView:Story];
+    } failure:^{
+        
+    }];
 }
 
 #pragma mark - 处理上拉刷新
