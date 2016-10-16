@@ -20,6 +20,8 @@
 
 -(void)setStroy:(Story *)stroy {
     _stroy = stroy;
+    self.frame = CGRectMake(self.bounds.size.width, 0, self.bounds.size.width, self.bounds.size.height);
+
     NSData* data =[NSData dataWithContentsOfURL:[NSURL URLWithString:self.stroy.css]];
     NSString* cssContent =[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSInteger bodyPadding =736 == [[UIScreen mainScreen] bounds].size.height ? 130 : 100;
@@ -31,11 +33,16 @@
      self.stroy.body];
 
     dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:1 animations:^{
+            self.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+        }];
         [self loadHTMLString:htmlString baseURL:nil];
         [self addGestureRecognizer];
     });
     
     self.scrollView.bounces = YES;
+    
+
 
 }
 

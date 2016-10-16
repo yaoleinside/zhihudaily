@@ -133,25 +133,31 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-   
+    Stories* st = self.dataArray[indexPath.section][indexPath.row];
+    NSString* iid =[NSString stringWithFormat:@"%d", (int)st.iid];
+    [_tool getStory:iid success:^(Story *Story) {
+        [self loadStoryView:Story];
+    } failure:^{
+        
+    }];
+
 
 }
 
-
+static StroyView *webView;
+static UIImageView *webImageView;
 -(void)loadStoryView:(Story *)story {
     
-    UIScrollView *sv = [[UIScrollView alloc]initWithFrame:[UIScreen mainScreen] .bounds];
-    sv.delegate = self;
-    StroyView *webView = [[StroyView alloc]initWithFrame:[UIScreen mainScreen] .bounds];
+    webView = [[StroyView alloc]initWithFrame:[UIScreen mainScreen] .bounds];
     webView.stroy = story;
+    webView.scrollView.delegate = self;
     
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 375, 300)];
-    [imageView sd_setImageWithURL:[NSURL URLWithString:story.image]];
+    webImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 375, 300)];
+    [webImageView sd_setImageWithURL:[NSURL URLWithString:story.image]];
     
-    [sv addSubview:webView];
-    [sv addSubview:imageView];
+    [webView addSubview:webImageView];
 
-    [self.view.window insertSubview:sv aboveSubview:self.view.window];
+    [self.view.window insertSubview:webView aboveSubview:self.view.window];
 }
 
 
@@ -159,7 +165,7 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
 #pragma mark - 实现BannerViewDelegate
 -(void)sendCurrentPageIndex:(NSInteger)index {
     NSLog(@"%tu",index);
-    NSString* iid =[NSString stringWithFormat:@"%d", self.topStories[index].iid];
+    NSString* iid =[NSString stringWithFormat:@"%d", (int)self.topStories[index].iid];
     [_tool getStory:iid success:^(Story *Story) {
         [self loadStoryView:Story];
     } failure:^{
@@ -170,6 +176,7 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
 #pragma mark - 处理上拉刷新
 static bool isNeedUpdate = true;
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
     if (self.lastDate == nil) return;
     CGPoint py =[scrollView contentOffset];
     
@@ -194,7 +201,9 @@ static bool isNeedUpdate = true;
         self.navigationItem.title = @"今日热闻";
         self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
     }
-
+    
+    webImageView.frame = CGRectMake(0, -webView.scrollView.contentOffset.y, 375, 300);
+    
 }
 
 
