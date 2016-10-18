@@ -54,6 +54,9 @@
 }
 
 
+/*
+ 根据iid获得webview的数据
+ */
 -(void)loadStoryData:(NSString *)iid success:(void (^)(id))success failure:(void (^)(void))failure {
 //    iid = [NSString stringWithFormat:@"%d",iid];
     

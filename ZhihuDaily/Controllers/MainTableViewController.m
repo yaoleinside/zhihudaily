@@ -37,7 +37,12 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
 @implementation MainTableViewController
 
 
-
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]){
+        [self initialize];
+    }
+    return self;
+}
 
 -(void)initialize {
     _tool = [YaoleDataSource sharedDataSource];
@@ -53,9 +58,17 @@ static const CGFloat kHeaderViewHeight = 44;//固定headerView高度
 
 }
 
+
+-(void)loadView {
+    [super loadView];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initialize];
+//    [self initialize];
+    [self.tableView reloadData];
+    self.bannerView.stories = self.topStories;
     [self setupTopExhibitonView];
     [self setNavigationBarTranslucent];
 

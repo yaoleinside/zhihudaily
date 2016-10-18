@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fWN-Id-Ibj">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Loading Screen Controller-->
+        <scene sceneID="I0Y-Mf-V1I">
+            <objects>
+                <viewController id="fWN-Id-Ibj" customClass="LoadingScreenController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9u4-nF-4KZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ebW-4y-GFO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qiu-Bw-tSp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_screen_logo" highlightedImage="launch_screen_logo" translatesAutoresizingMaskIntoConstraints="NO" id="mWI-HX-Y5G">
+                                <rect key="frame" x="237.5" y="487.5" width="125" height="45"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mWI-HX-Y5G" firstAttribute="centerY" secondItem="qiu-Bw-tSp" secondAttribute="centerY" multiplier="1.7" id="TIy-lp-18Z"/>
+                            <constraint firstItem="mWI-HX-Y5G" firstAttribute="centerX" secondItem="qiu-Bw-tSp" secondAttribute="centerX" id="c6i-3d-U6f"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="mainImage" destination="mWI-HX-Y5G" id="D3P-9f-idk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Rd-aR-kj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="538" y="-149"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="launch_screen_logo" width="125" height="45"/>
+    </resources>
+</document>

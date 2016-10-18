@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LoadingScreenController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    UIStoryboard *sb1 = [UIStoryboard storyboardWithName:@"loadingScreen" bundle:nil];
+    LoadingScreenController* vc1 = [sb1 instantiateInitialViewController];
+
+    
+    self.window.rootViewController = vc1;
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController* vc = [sb instantiateInitialViewController];
+    
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.window.rootViewController = vc;
+            });
+
     return YES;
 }
 

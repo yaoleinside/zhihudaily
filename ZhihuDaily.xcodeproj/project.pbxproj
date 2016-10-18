@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1691AD6FDB01EFFCD810F96B /* libPods-ZhihuDaily.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA2B1C7972FB76D453AD42F /* libPods-ZhihuDaily.a */; };
+		E5080EAB1DB5046E000C02AA /* loadingScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5080EAA1DB5046E000C02AA /* loadingScreen.storyboard */; };
+		E5080EAE1DB50498000C02AA /* LoadingScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5080EAD1DB50498000C02AA /* LoadingScreenController.m */; };
 		E51BF7A71DAA704200F69878 /* NSString+Md5.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7A61DAA704200F69878 /* NSString+Md5.m */; };
 		E51BF7AA1DAA8F0300F69878 /* YLDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7A91DAA8F0300F69878 /* YLDate.m */; };
 		E51BF7AD1DAB6DD300F69878 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = E51BF7AC1DAB6DD300F69878 /* Story.m */; };
@@ -34,6 +36,9 @@
 		0BA2B1C7972FB76D453AD42F /* libPods-ZhihuDaily.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZhihuDaily.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		669B3BCD829D9D9E060466EB /* Pods-ZhihuDaily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDaily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDaily/Pods-ZhihuDaily.debug.xcconfig"; sourceTree = "<group>"; };
 		DE400BC250AFA6D9EEEBA8C7 /* Pods-ZhihuDaily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhihuDaily.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhihuDaily/Pods-ZhihuDaily.release.xcconfig"; sourceTree = "<group>"; };
+		E5080EAA1DB5046E000C02AA /* loadingScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = loadingScreen.storyboard; sourceTree = "<group>"; };
+		E5080EAC1DB50498000C02AA /* LoadingScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScreenController.h; sourceTree = "<group>"; };
+		E5080EAD1DB50498000C02AA /* LoadingScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingScreenController.m; sourceTree = "<group>"; };
 		E51BF7A01DAA6B5000F69878 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E51BF7A51DAA704200F69878 /* NSString+Md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Md5.h"; sourceTree = "<group>"; };
 		E51BF7A61DAA704200F69878 /* NSString+Md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Md5.m"; sourceTree = "<group>"; };
@@ -149,6 +154,7 @@
 				E599663E1DA9044000853F8F /* AppDelegate.h */,
 				E599663F1DA9044000853F8F /* AppDelegate.m */,
 				E59966441DA9044000853F8F /* Main.storyboard */,
+				E5080EAA1DB5046E000C02AA /* loadingScreen.storyboard */,
 				E599664A1DA9044000853F8F /* Assets.xcassets */,
 				E599664C1DA9044000853F8F /* LaunchScreen.storyboard */,
 				E599664F1DA9044000853F8F /* Info.plist */,
@@ -171,6 +177,8 @@
 			children = (
 				E59966581DA9061300853F8F /* MainTableViewController.h */,
 				E59966591DA9061300853F8F /* MainTableViewController.m */,
+				E5080EAC1DB50498000C02AA /* LoadingScreenController.h */,
+				E5080EAD1DB50498000C02AA /* LoadingScreenController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -265,6 +273,7 @@
 			files = (
 				E599664E1DA9044000853F8F /* LaunchScreen.storyboard in Resources */,
 				E599664B1DA9044000853F8F /* Assets.xcassets in Resources */,
+				E5080EAB1DB5046E000C02AA /* loadingScreen.storyboard in Resources */,
 				E59966461DA9044000853F8F /* Main.storyboard in Resources */,
 				E59966661DA9343000853F8F /* StroyCell.xib in Resources */,
 			);
@@ -331,6 +340,7 @@
 				E5FD60691DAF920C0072490D /* YaoleNetworkingTool.m in Sources */,
 				E51BF7B01DAB6E9400F69878 /* StroyView.m in Sources */,
 				E5FD606F1DAFC7590072490D /* SQLiteTool.m in Sources */,
+				E5080EAE1DB50498000C02AA /* LoadingScreenController.m in Sources */,
 				E59966491DA9044000853F8F /* ZhihuDaily.xcdatamodeld in Sources */,
 				E5FD60771DAFFA6F0072490D /* YaoleDataSource.m in Sources */,
 				E5FD607D1DB0B9180072490D /* BannerView.m in Sources */,
